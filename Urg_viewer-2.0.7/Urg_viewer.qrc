@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/icons" >
+    <file alias="rescan_icon" >rescan_icon.png</file>
+    <file alias="folder_icon" >folder_icon.png</file>
+    <file alias="play_icon" >play_icon.png</file>
+    <file alias="pause_icon" >pause_icon.png</file>
+    <file alias="stop_icon" >stop_icon.png</file>
+    <file alias="record_icon" >record_icon.png</file>
+    <file alias="zoom_in_icon" >zoom_in_icon.png</file>
+    <file alias="zoom_out_icon" >zoom_out_icon.png</file>
+  </qresource>
+</RCC>

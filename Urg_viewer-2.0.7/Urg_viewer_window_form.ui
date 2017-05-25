@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Urg_viewer_window_form</class>
+ <widget class="QMainWindow" name="Urg_viewer_window_form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>557</width>
+    <height>396</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Urg Viewer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Urg_viewer.qrc">
+    <normaloff>:/icons/application_icon</normaloff>:/icons/application_icon</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="connection_layout_">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>1</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="change_button_">
+        <property name="text">
+         <string>Change to Ethernet</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="main_layout_">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="under_layout_"/>
+      </item>
+      <item>
+       <spacer name="under_spacer_">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="csv_progress_bar_">
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>557</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_save_as_csv_"/>
+    <addaction name="separator"/>
+    <addaction name="action_quit_"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_about_"/>
+   </widget>
+   <widget class="QMenu" name="menu_View">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="action_zoom_in_"/>
+    <addaction name="action_zoom_out_"/>
+   </widget>
+   <widget class="QMenu" name="menu_Log">
+    <property name="title">
+     <string>&amp;Log</string>
+    </property>
+    <addaction name="action_record_"/>
+    <addaction name="separator"/>
+    <addaction name="action_open_"/>
+    <addaction name="action_play_"/>
+    <addaction name="action_pause_"/>
+    <addaction name="action_stop_"/>
+    <addaction name="action_scan_forward_1_"/>
+    <addaction name="action_scan_back_1_"/>
+    <addaction name="action_scan_forward_10_"/>
+    <addaction name="action_scan_back_10_"/>
+    <addaction name="action_play_faster_"/>
+    <addaction name="action_play_slower_"/>
+   </widget>
+   <widget class="QMenu" name="menu_Window">
+    <property name="title">
+     <string>&amp;Window</string>
+    </property>
+    <addaction name="action_data_value_window_"/>
+    <addaction name="action_scan_setting_window_"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Log"/>
+   <addaction name="menu_View"/>
+   <addaction name="menu_Window"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <action name="action_quit_">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_about_">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_zoom_out_">
+   <property name="icon">
+    <iconset resource="Urg_viewer.qrc">
+     <normaloff>:/icons/zoom_out_icon</normaloff>:/icons/zoom_out_icon</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom &amp;Out</string>
+   </property>
+   <property name="shortcut">
+    <string>-</string>
+   </property>
+  </action>
+  <action name="action_zoom_in_">
+   <property name="icon">
+    <iconset resource="Urg_viewer.qrc">
+     <normaloff>:/icons/zoom_in_icon</normaloff>:/icons/zoom_in_icon</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom &amp;In</string>
+   </property>
+   <property name="shortcut">
+    <string>+</string>
+   </property>
+  </action>
+  <action name="action_open_">
+   <property name="text">
+    <string>&amp;Open log file</string>
+   </property>
+  </action>
+  <action name="action_play_">
+   <property name="icon">
+    <iconset resource="Urg_viewer.qrc">
+     <normaloff>:/icons/play_icon</normaloff>:/icons/play_icon</iconset>
+   </property>
+   <property name="text">
+    <string>Pla&amp;y</string>
+   </property>
+  </action>
+  <action name="action_pause_">
+   <property name="icon">
+    <iconset resource="Urg_viewer.qrc">
+     <normaloff>:/icons/pause_icon</normaloff>:/icons/pause_icon</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Pause</string>
+   </property>
+  </action>
+  <action name="action_stop_">
+   <property name="icon">
+    <iconset resource="Urg_viewer.qrc">
+     <normaloff>:/icons/stop_icon</normaloff>:/icons/stop_icon</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Stop</string>
+   </property>
+  </action>
+  <action name="action_scan_forward_10_">
+   <property name="text">
+    <string>scan +10</string>
+   </property>
+   <property name="shortcut">
+    <string>Up</string>
+   </property>
+  </action>
+  <action name="action_scan_back_10_">
+   <property name="text">
+    <string>scan -10</string>
+   </property>
+   <property name="shortcut">
+    <string>Down</string>
+   </property>
+  </action>
+  <action name="action_scan_forward_1_">
+   <property name="text">
+    <string>next scan</string>
+   </property>
+   <property name="shortcut">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="action_minute_forward_1_">
+   <property name="text">
+    <string>minute +1</string>
+   </property>
+   <property name="shortcut">
+    <string>PgUp</string>
+   </property>
+  </action>
+  <action name="action_minute_back_1_">
+   <property name="text">
+    <string>minute -1</string>
+   </property>
+   <property name="shortcut">
+    <string>PgDown</string>
+   </property>
+  </action>
+  <action name="action_scan_back_1_">
+   <property name="text">
+    <string>previous scan</string>
+   </property>
+   <property name="shortcut">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="action_save_as_csv_">
+   <property name="text">
+    <string>&amp;Save as csv data</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_record_">
+   <property name="icon">
+    <iconset resource="Urg_viewer.qrc">
+     <normaloff>:/icons/record_icon</normaloff>:/icons/record_icon</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Record</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Return</string>
+   </property>
+  </action>
+  <action name="action_play_faster_">
+   <property name="text">
+    <string>play faster</string>
+   </property>
+   <property name="shortcut">
+    <string>*</string>
+   </property>
+  </action>
+  <action name="action_play_slower_">
+   <property name="text">
+    <string>play slower</string>
+   </property>
+   <property name="shortcut">
+    <string>/</string>
+   </property>
+  </action>
+  <action name="action_data_value_window_">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Data value window</string>
+   </property>
+  </action>
+  <action name="action_scan_setting_window_">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Scan setting window</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>change_button_</tabstop>
+ </tabstops>
+ <resources>
+  <include location="Urg_viewer.qrc"/>
+ </resources>
+ <connections/>
+</ui>
