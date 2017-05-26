@@ -20,6 +20,7 @@
 #define OUTPUT_BUFFER_SIZE 1024
 #include "osc/OscOutboundPacketStream.h"
 #include "ip/UdpSocket.h"
+#include <QtCore/qmath.h>
 
 #include "detect_os.h"
 #include <cmath>
@@ -506,7 +507,8 @@ struct Plotter_2d_widget::pImpl
                 v.y = distance * sin(radian);
                 const int scans_index = index % echo_size_;
                 scans[scans_index].push_back(v);
-                if(true) //(v.x > 1000.0 && v.y > 1000.0)
+
+                if(abs((int)v.x) > 75 && abs((int)v.y) > 75 && abs((int)v.x) < 1300 && abs((int)v.y) < 1300 )
                 {
                     char buffer[OUTPUT_BUFFER_SIZE];
                     osc::OutboundPacketStream p( buffer, OUTPUT_BUFFER_SIZE );
